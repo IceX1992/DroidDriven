@@ -11,14 +11,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.dion.droiddriven.droiddriven.database.NotesDAO;
+import com.dion.droiddriven.droiddriven.entities.Notes;
 
 public class Dashboard extends AppCompatActivity {
 
     //http://blog.teamtreehouse.com/add-navigation-drawer-android
     private ListView mDrawerList;
     private ArrayAdapter<String> mAdapter;
+    private NotesDAO db;
 
 
     @Override
@@ -28,6 +33,7 @@ public class Dashboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        db = new NotesDAO(this);
 
         mDrawerList = (ListView) findViewById(R.id.navList);
         addDrawerItems();
@@ -43,6 +49,13 @@ public class Dashboard extends AppCompatActivity {
         });
     }
 
+    public void findNotes(View view) {
+        db.findNotes();
+        EditText returnfield = (EditText) findViewById(R.id.editText);
+        String titel = String.format(Notes.getTitel());
+        String inhoud = String.format(Notes.getInhoud());
+        returnfield.setText(titel + inhoud);
+    }
 
     private void addDrawerItems() {
         String[] osArray = {" ", "Create", "About"};
