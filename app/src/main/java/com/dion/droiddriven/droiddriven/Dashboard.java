@@ -21,6 +21,9 @@ import com.dion.droiddriven.droiddriven.entities.Notes;
 public class Dashboard extends AppCompatActivity {
 
     //http://blog.teamtreehouse.com/add-navigation-drawer-android
+    //http://www.codeproject.com/Articles/524204/Simple-notepad-for-Android
+
+
     private ListView mDrawerList;
     private ArrayAdapter<String> mAdapter;
     private NotesDAO db;
