@@ -19,7 +19,7 @@ public class Notes {
         return titel;
     }
 
-    public static void setTitel(String titel) {
+    public void setTitel(String titel) {
         Notes.titel = titel;
     }
 
@@ -27,7 +27,7 @@ public class Notes {
         return inhoud;
     }
 
-    public static void setInhoud(String inhoud) {
+    public void setInhoud(String inhoud) {
         Notes.inhoud = inhoud;
     }
 

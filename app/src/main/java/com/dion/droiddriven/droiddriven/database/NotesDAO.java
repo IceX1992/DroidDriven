@@ -38,10 +38,13 @@ public class NotesDAO extends SQLiteOpenHelper {
         notesValues.put(NOTES_INHOUD, "Melk, ei, brood");
         insertNote(NOTES_TABLE, notesValues);
 
+        ContentValues notesValues2 = new ContentValues();
+        notesValues2.put(NOTES_TITEL, "Dag agenda");
+        notesValues2.put(NOTES_INHOUD, "Werk, school,TBL");
+        insertNote(NOTES_TABLE, notesValues2);
     }
 
-
-    public long insertNote(String notesTable, ContentValues notes) {
+    public long insertNote(String titel, ContentValues notes) {
         SQLiteDatabase db = getWritableDatabase();
         long rowId = db.insert(NOTES_TABLE, null, notes);
         db.close();
