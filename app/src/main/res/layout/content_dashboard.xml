@@ -4,14 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <!-- -->
-
 
     <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
@@ -19,15 +17,27 @@
         tools:context="com.dion.droiddriven.droiddriven.Dashboard"
         tools:showIn="@layout/activity_dashboard">
 
-        <TextView
+
+        <Button
+            android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="100dp"
-            android:gravity="center"
-            android:text="Holy Operating Systems, Batdroid!"
-            android:textSize="24sp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="41dp"
+            android:layout_toLeftOf="@+id/button3"
+            android:layout_toStartOf="@+id/button3"
+            android:text="Delete note" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/button2"
+            android:text="Update note" />
     </RelativeLayout>
 
     <ListView
@@ -36,7 +46,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="left|start"
         android:background="#ffeeeeee" />
-
 
 </android.support.v4.widget.DrawerLayout>
 

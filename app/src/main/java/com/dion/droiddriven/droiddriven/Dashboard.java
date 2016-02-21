@@ -9,8 +9,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -46,6 +48,14 @@ public class Dashboard extends AppCompatActivity {
         String[] osArray = {" ", "Create", "About"};
         mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
         mDrawerList.setAdapter(mAdapter);
+
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(Dashboard.this, "Time for an upgrade!", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 
     @Override
