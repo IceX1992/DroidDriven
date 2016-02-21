@@ -9,8 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class Dashboard extends AppCompatActivity {
+
+    //http://blog.teamtreehouse.com/add-navigation-drawer-android
+    private ListView mDrawerList;
+    private ArrayAdapter<String> mAdapter;
 
 
     @Override
@@ -20,6 +26,11 @@ public class Dashboard extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        mDrawerList = (ListView) findViewById(R.id.navList);
+        addDrawerItems();
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +39,13 @@ public class Dashboard extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+
+    private void addDrawerItems() {
+        String[] osArray = {" ", "Create", "About"};
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, osArray);
+        mDrawerList.setAdapter(mAdapter);
     }
 
     @Override
